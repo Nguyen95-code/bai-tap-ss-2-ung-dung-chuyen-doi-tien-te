@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <table>
+        <tr>
+            <td>amount</td>
+            <td>from currency</td>
+            <td>to currency</td>
+        </tr>
+        <tr>
+            <td><input id="nhaptien" type="number"></td>
+            <td>
+                <select id="loai1">
+                    <option value="VND">VND</option>
+                    <option value="USA">USA</option>
+                </select>
+            </td>
+            <td>
+                <select id="loai2">
+                    <option value="VND">VND</option>
+                    <option value="USA">USA</option>
+                </select>
+            </td>
+            <td>
+                <button type="button" onclick="convert()">Convert</button>
+            </td>
+        </tr>
+    </table>
+</form>
+ket qua : <span id="ketqua"></span>
+<script>
+function convert() {
+    let nhaptien = document.getElementById("nhaptien").value;
+    let loai1 = document.getElementById("loai1").value;
+    let loai2 = document.getElementById("loai2").value;
+    let ketqua;
+    if (loai1 === "VND" && loai2 === "USA" ) {
+        ketqua = nhaptien / 23000;
+    }else if (loai1 === "USA" && loai2 === "VND") {
+        ketqua = nhaptien * 23000;
+    }else {
+        ketqua = nhaptien;
+    }
+    document.getElementById("ketqua").innerHTML=ketqua;
+}
+</script>
+</body>
+</html>
