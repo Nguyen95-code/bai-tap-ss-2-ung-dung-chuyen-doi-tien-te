@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <table>
+        <tr>
+            <td>nhaptien</td>
+            <td>tien1</td>
+            <td>tien2</td>
+        </tr>
+        <tr>
+            <td><input id="nhaptien" type="number"></td>
+            <td>
+                <select id="tien1">
+                    <option value="23000">VND</option>
+                    <option value="1">USD</option>
+                    <option value="30000">ANH</option>
+                    <option value="15000">NHAT</option>
+                    <option value="20000">HAN</option>
+                </select>
+            </td>
+            <td>
+                <select id="tien2">
+                    <option value="23000">VND</option>
+                    <option value="1">USD</option>
+                    <option value="30000">ANH</option>
+                    <option value="15000">NHAT</option>
+                    <option value="20000">HAN</option>
+                </select>
+            </td>
+            <td>
+                <button type="button" onclick="convert()">convert</button>
+            </td>
+        </tr>
+    </table>
+</form>
+ket qua : <p id="ketqua"></p>
+<script>
+    function convert() {
+        let nhaptien = document.getElementById("nhaptien").value;
+        let tien1 = document.getElementById("tien1").value;
+        let tien2 = document.getElementById("tien2").value;
+        let ketqua;
+        ketqua = (nhaptien * tien2) / tien1;
+        document.getElementById("ketqua").innerHTML = ketqua;
+    }
+</script>
+</body>
+</html>
